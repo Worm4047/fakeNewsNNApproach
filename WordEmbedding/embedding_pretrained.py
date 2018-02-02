@@ -1,12 +1,8 @@
 '''This script loads pre-trained word embeddings (GloVe embeddings)
-into a frozen Keras Embedding layer, and uses it to
-train a text classification model on the 20 Newsgroup dataset
-(classification of newsgroup messages into 20 different categories).
+into a frozen Keras Embedding layer
 GloVe embedding data can be found at:
 http://nlp.stanford.edu/data/glove.6B.zip
 (source page: http://nlp.stanford.edu/projects/glove/)
-20 Newsgroup data can be found at:
-http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/news20.html
 '''
 
 from __future__ import print_function
@@ -32,8 +28,7 @@ from keras.optimizers import Adam
 import matplotlib.pyplot as plt
 
 BASE_DIR = ''
-GLOVE_DIR = os.path.join(BASE_DIR, 'glove.6B')
-TEXT_DATA_DIR = os.path.join(BASE_DIR, '20_newsgroup')
+GLOVE_DIR = os.path.join(BASE_DIR, './data/glove.6B')
 MAX_SEQUENCE_LENGTH = 500
 MAX_NUM_WORDS = 20000
 EMBEDDING_DIM = 100
@@ -58,7 +53,7 @@ print('Found %s word vectors.' % len(embeddings_index))
 # second, prepare text samples and their labels
 print('Processing text dataset')
 
-df_all = pd.read_csv('dataset/Complete_Dataset_Clean.csv', sep="{")
+df_all = pd.read_csv('./data/dataset/Complete_Dataset_Clean.csv', sep="{")
 X_body_text = df_all.body.values[:-10]
 y = df_all.fakeness.values[:-10]
 
