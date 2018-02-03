@@ -163,6 +163,10 @@ embedding_layer = Embedding(num_words,
                             input_length=MAX_SEQUENCE_LENGTH,
                             trainable=False)
 
+# embedding_layer = Embedding(len(word_index) + 1,
+#                             EMBEDDING_DIM,
+#                             input_length=MAX_SEQUENCE_LENGTH)
+
 print('Training model.')
 
 model = Sequential()

@@ -3,3 +3,5 @@ sample-1M.json
 signalNews.csv
 WordEmbedding/data
 NN_with_GA/dataset
+fake.csv
+complete_signal_dataset.csv
